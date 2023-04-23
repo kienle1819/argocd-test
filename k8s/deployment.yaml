@@ -16,6 +16,6 @@ spec:
       - name: my-app
         image: tonykien2012/demo-gitlab-cicd-app:v1.0.0-0a41c4cd6de160227582e65d01a0654ba7671eb8
 #         args:
-#         - "-text=hello world vn"
+#         - "-text=hello world vn 2023"
         ports:
         - containerPort: 5000
