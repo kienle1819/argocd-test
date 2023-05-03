@@ -5,9 +5,8 @@ metadata:
 spec:
   selector:
     app: my-app
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 5000
-    nodePort: 31000
     protocol: TCP
     targetPort: 5000
