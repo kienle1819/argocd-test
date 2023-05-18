@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-prometheus-stack
+spec:
+  syncPolicy:
+    syncOptions:
+    - ServerSideApply=true
+    - CreateNamespace=true
+  destination:
+    namespace: monitoring
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: kube-prometheus-stack
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 45.27.2
+    helm:
+      version: v3
+      values: |
+        grafana:
+          enabled: true
+          defaultDashboardsEnabled: true
+          defaultDashboardsTimezone: Asia/Ho_Chi_Minh
+          adminPassword: hAhyjmimpd8GnY4ky8km
+        kubeEtcd:
+          enabled: false
+        kubeControllerManager:
+          enabled: false    
+        # kubeScheduler:
+        #   enabled: false
+        # kubelet:
+        #   serviceMonitorSelector:
+        #     https: false
