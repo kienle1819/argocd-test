@@ -27,8 +27,8 @@ spec:
           enabled: false
         kubeControllerManager:
           enabled: false    
-        # kubeScheduler:
-        #   enabled: false
-        # kubelet:
-        #   serviceMonitorSelector:
-        #     https: false
+        kubeScheduler:
+          enabled: false
+        kubelet:
+          serviceMonitorSelector:
+            https: false
